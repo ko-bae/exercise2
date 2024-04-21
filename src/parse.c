@@ -51,9 +51,13 @@ int parseString(FILE *fh) {
 		switch (buf[i]) {
 		case '\n':
 			fputs("\\n", stdout);
+			break;
 		case '\\':
+			fputs("\\\\", stdout);
+			break;
 		case '\"':
-			fputs("\\", stdout);
+			fputs("\\\"", stdout);
+			break;
 		default:
 			fprintf(stdout, "%c", buf[i]);
 		}
@@ -84,7 +88,7 @@ int parseNumberInt(FILE *fh) {
 		return ret;
 	}
 
-	fprintf(stdout, "%ld", (int64_t)num);
+	fprintf(stdout, "%lld", (int64_t)num);
 
 	return 0;
 }
