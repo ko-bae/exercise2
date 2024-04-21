@@ -1,0 +1,14 @@
+#!/bin/bash
+
+declare test="$1";
+
+declare output="$(./bin2json "tests/$test.bin")";
+declare expectation="$(cat "tests/$test.json")";
+
+if [ "$output" != "$expectation" ]; then
+	echo "Test $test failed." >&2;
+
+	exit 1;
+fi;
+
+echo "Test $test Succeeded." >&2;

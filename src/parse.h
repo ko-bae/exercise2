@@ -1,0 +1,1 @@
+int parseBin(FILE *fh);
