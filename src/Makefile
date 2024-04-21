@@ -7,6 +7,7 @@ test:
 	tests/run c
 	tests/run d
 	tests/run e
+	tests/run f
 
 clean:
 	rm -f bin2json
